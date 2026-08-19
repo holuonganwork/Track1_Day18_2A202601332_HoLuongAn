@@ -4,8 +4,6 @@
 
 | Thông tin chung | Chi tiết |
 |---|---|
-| **Mã học viên (MHV)** | 2A202601162 |
-| **Họ và tên** | Trần Chí Hiển |
 | **Tên nhóm** | Team Moi |
 | **Case** | Case B: AI Notes: Personal Learning Notes |
 
