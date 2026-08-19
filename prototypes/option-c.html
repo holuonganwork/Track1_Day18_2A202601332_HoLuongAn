@@ -33,92 +33,107 @@
             </div>
           </div>
 
-          <!-- Video Player -->
-          <div class="video-player">
-            <div class="video-slide-area" id="slide-area">
-              <span class="slide-label" id="slide-label">Slide 1 / 4</span>
-              <div id="slide-1" class="slide-view">
-                <h2 class="slide-title">Bài 3: Phân tích Cấu trúc Chi phí Doanh nghiệp</h2>
-                <div class="slide-content">
-                  <p>📚 Nội dung bài học hôm nay:</p>
-                  <p style="margin-top:12px">• Phân biệt <strong>chi phí cố định</strong> và <strong>chi phí biến
-                      đổi</strong></p>
-                  <p>• Tính <strong>điểm hoà vốn (Break-even Point)</strong></p>
-                  <p>• Ứng dụng <strong>biên lợi nhuận gộp</strong> trong quyết định kinh doanh</p>
-                </div>
-              </div>
-              <div id="slide-2" class="slide-view" style="display:none">
-                <h2 class="slide-title">Chi phí Cố định vs Chi phí Biến đổi</h2>
-                <div class="slide-content">
-                  <p><strong>Chi phí cố định (Fixed Costs):</strong> Không thay đổi theo sản lượng</p>
-                  <p style="margin-top:8px">→ Tiền thuê mặt bằng, lương nhân viên cố định, khấu hao thiết bị</p>
-                  <p style="margin-top:16px"><strong>Chi phí biến đổi (Variable Costs):</strong> Tăng/giảm theo sản
-                    lượng</p>
-                  <p style="margin-top:8px">→ Nguyên vật liệu, hoa hồng bán hàng, chi phí vận chuyển</p>
-                  <p style="margin-top:16px; color: #60A5FA;">⚠️ Sai lầm phổ biến: Nhầm lẫn giữa chi phí "nhỏ" với chi
-                    phí "biến đổi"</p>
-                </div>
-              </div>
-              <div id="slide-3" class="slide-view" style="display:none">
-                <h2 class="slide-title">Điểm Hoà vốn (Break-even Point)</h2>
-                <div class="slide-content">
-                  <p>Điểm tại đó tổng doanh thu bằng tổng chi phí → Lợi nhuận = 0</p>
-                  <div class="formula">
-                    BEP = Chi phí cố định ÷ (Giá bán − Chi phí biến đổi/đơn vị)
+          <div class="lecture-grid">
+            <!-- Left Column: Video Player -->
+            <div class="lecture-main">
+              <div class="video-player">
+                <div class="video-slide-area" id="slide-area">
+                  <div class="text-selection-menu" id="text-selection-menu">
+                    <span style="font-size:11px; color:rgba(255,255,255,0.7); margin-right:4px;">Ghim:</span>
+                    <button class="btn-sel-action btn-sel-bookmark" onclick="saveTextBookmark()">📌 Ghim trích dẫn này</button>
                   </div>
-                  <p style="margin-top:12px"><strong>Ý nghĩa:</strong> Doanh nghiệp cần bán ít nhất bao nhiêu đơn vị để
-                    không lỗ</p>
-                  <p style="margin-top:8px; color: #60A5FA;">→ BEP thấp = rủi ro thấp hơn khi mới khởi nghiệp</p>
-                </div>
-              </div>
-              <div id="slide-4" class="slide-view" style="display:none">
-                <h2 class="slide-title">Case Study: Quán Cafe Startup</h2>
-                <div class="slide-content">
-                  <p><strong>Dữ kiện:</strong></p>
-                  <p>• Thuê mặt bằng + lương: <strong>30 triệu/tháng</strong> (cố định)</p>
-                  <p>• Chi phí 1 ly cafe: <strong>15.000đ</strong> (biến đổi)</p>
-                  <p>• Giá bán 1 ly: <strong>45.000đ</strong></p>
-                  <div class="formula">
-                    BEP = 30.000.000 ÷ (45.000 − 15.000) = 1.000 ly/tháng
+                  <button class="slide-overlay-btn slide-overlay-prev" id="slide-prev-overlay" onclick="prevSlide()" title="Slide trước (Phím ←)" disabled aria-label="Slide trước">‹</button>
+                  <button class="slide-overlay-btn slide-overlay-next" id="slide-next-overlay" onclick="nextSlide()" title="Tiến slide (Phím →)" aria-label="Slide tiếp">›</button>
+                  <span class="slide-label" id="slide-label">Slide 1 / 4</span>
+                  <div id="slide-1" class="slide-view">
+                    <h2 class="slide-title">Bài 3: Phân tích Cấu trúc Chi phí Doanh nghiệp</h2>
+                    <div class="slide-content">
+                      <p>📚 Nội dung bài học hôm nay:</p>
+                      <p style="margin-top:12px">• Phân biệt <strong>chi phí cố định</strong> và <strong>chi phí biến
+                          đổi</strong></p>
+                      <p>• Tính <strong>điểm hoà vốn (Break-even Point)</strong></p>
+                      <p>• Ứng dụng <strong>biên lợi nhuận gộp</strong> trong quyết định kinh doanh</p>
+                    </div>
                   </div>
-                  <p style="margin-top:12px; color: #60A5FA;">→ Cần bán ít nhất 1.000 ly/tháng (~33 ly/ngày) mới hoà vốn
-                  </p>
+                  <div id="slide-2" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Chi phí Cố định vs Chi phí Biến đổi</h2>
+                    <div class="slide-content">
+                      <p><strong>Chi phí cố định (Fixed Costs):</strong> Không thay đổi theo sản lượng</p>
+                      <p style="margin-top:8px">→ Tiền thuê mặt bằng, lương nhân viên cố định, khấu hao thiết bị</p>
+                      <p style="margin-top:16px"><strong>Chi phí biến đổi (Variable Costs):</strong> Tăng/giảm theo sản
+                        lượng</p>
+                      <p style="margin-top:8px">→ Nguyên vật liệu, hoa hồng bán hàng, chi phí vận chuyển</p>
+                      <p style="margin-top:16px; color: #60A5FA;">⚠️ Sai lầm phổ biến: Nhầm lẫn giữa chi phí "nhỏ" với chi
+                        phí "biến đổi"</p>
+                    </div>
+                  </div>
+                  <div id="slide-3" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Điểm Hoà vốn (Break-even Point)</h2>
+                    <div class="slide-content">
+                      <p>Điểm tại đó tổng doanh thu bằng tổng chi phí → Lợi nhuận = 0</p>
+                      <div class="formula">
+                        BEP = Chi phí cố định ÷ (Giá bán − Chi phí biến đổi/đơn vị)
+                      </div>
+                      <p style="margin-top:12px"><strong>Ý nghĩa:</strong> Doanh nghiệp cần bán ít nhất bao nhiêu đơn vị để
+                        không lỗ</p>
+                      <p style="margin-top:8px; color: #60A5FA;">→ BEP thấp = rủi ro thấp hơn khi mới khởi nghiệp</p>
+                    </div>
+                  </div>
+                  <div id="slide-4" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Case Study: Quán Cafe Startup</h2>
+                    <div class="slide-content">
+                      <p><strong>Dữ kiện:</strong></p>
+                      <p>• Thuê mặt bằng + lương: <strong>30 triệu/tháng</strong> (cố định)</p>
+                      <p>• Chi phí 1 ly cafe: <strong>15.000đ</strong> (biến đổi)</p>
+                      <p>• Giá bán 1 ly: <strong>45.000đ</strong></p>
+                      <div class="formula">
+                        BEP = 30.000.000 ÷ (45.000 − 15.000) = 1.000 ly/tháng
+                      </div>
+                      <p style="margin-top:12px; color: #60A5FA;">→ Cần bán ít nhất 1.000 ly/tháng (~33 ly/ngày) mới hoà vốn
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="video-controls">
+                  <div class="video-nav-group">
+                    <button class="btn-ctrl btn-ctrl-icon" id="btn-prev" onclick="prevSlide()" title="Slide trước (Phím ←)" disabled aria-label="Slide trước">◀</button>
+                    <button class="btn-ctrl btn-ctrl-primary btn-ctrl-icon" id="btn-next" onclick="nextSlide()" title="Slide tiếp theo (Phím →)" aria-label="Slide tiếp">▶</button>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                  </div>
+                  <span class="video-time" id="video-time">0:00 / 18:00</span>
                 </div>
               </div>
             </div>
-            <div class="video-controls">
-              <button class="btn-play" id="btn-play" onclick="nextSlide()">▶</button>
-              <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+
+            <!-- Right Column: Interactive Sidebar -->
+            <div class="lecture-sidebar">
+              <!-- Big Bookmark Button -->
+              <button class="btn-bookmark-big" id="btn-bookmark" onclick="addBookmark()" style="width:100%; margin:0;">
+                📌 Bookmark mốc này
+                <span class="shortcut-hint">Phím B</span>
+              </button>
+
+              <!-- Bookmark List Panel -->
+              <div class="bookmark-panel">
+                <div class="bookmark-panel-header">
+                  <span class="bookmark-panel-title">📋 Danh sách Bookmark <span class="highlight-count" id="bm-count">0</span></span>
+                </div>
+                <ul class="bookmark-list" id="bookmark-list" style="max-height:220px;">
+                  <li class="bookmark-empty" id="bm-empty">
+                    Chưa có bookmark nào. Hãy bấm nút 📌 hoặc phím <strong>B</strong> khi gặp nội dung quan trọng.
+                  </li>
+                </ul>
               </div>
-              <span class="video-time" id="video-time">0:00 / 18:00</span>
+
+              <!-- End Lesson -->
+              <button class="btn btn-primary btn-lg btn-block" onclick="endLesson()" id="btn-end-lesson" disabled>
+                Kết thúc bài học → Xem lại mốc
+              </button>
+              <p class="text-center text-muted text-sm mt-8" style="font-size:12px;">Hãy xem các slide và ghim bookmark trước khi kết thúc</p>
             </div>
           </div>
-
-          <!-- Big Bookmark Button -->
-          <button class="btn-bookmark-big" id="btn-bookmark" onclick="addBookmark()">
-            📌 Bookmark mốc này
-            <span class="shortcut-hint">Phím B</span>
-          </button>
-
-          <!-- Bookmark List Panel -->
-          <div class="bookmark-panel">
-            <div class="bookmark-panel-header">
-              <span class="bookmark-panel-title">📋 Danh sách Bookmark <span class="highlight-count"
-                  id="bm-count">0</span></span>
-            </div>
-            <ul class="bookmark-list" id="bookmark-list">
-              <li class="bookmark-empty" id="bm-empty">
-                Chưa có bookmark nào. Hãy bấm nút 📌 hoặc phím <strong>B</strong> khi gặp nội dung quan trọng.
-              </li>
-            </ul>
-          </div>
-
-          <!-- End Lesson -->
-          <button class="btn btn-primary btn-lg btn-block mt-24" onclick="endLesson()" id="btn-end-lesson" disabled>
-            Kết thúc bài học → Xem lại các mốc đã ghim
-          </button>
-          <p class="text-center text-muted text-sm mt-16">Hãy xem các slide và ghim bookmark trước khi kết thúc</p>
         </div>
 
         <!-- ========== STATE 2: Review Bookmarks ========== -->
@@ -174,29 +189,135 @@
     const bookmarks = [];
 
     // --- Slide Navigation ---
-    function nextSlide() {
-      if (currentSlide < totalSlides) {
-        document.getElementById('slide-' + currentSlide).style.display = 'none';
-        currentSlide++;
-        document.getElementById('slide-' + currentSlide).style.display = '';
-        document.getElementById('slide-label').textContent = 'Slide ' + currentSlide + ' / ' + totalSlides;
-        document.getElementById('progress-fill').style.width = ((currentSlide / totalSlides) * 100) + '%';
-        const times = ['4:15', '9:00', '13:00', '18:00'];
-        document.getElementById('video-time').textContent = times[currentSlide - 1] + ' / 18:00';
-        if (currentSlide === totalSlides) {
-          document.getElementById('btn-play').textContent = '⏹';
-          document.getElementById('btn-end-lesson').disabled = false;
+    function updateSlideView() {
+      for (let i = 1; i <= totalSlides; i++) {
+        const el = document.getElementById('slide-' + i);
+        if (el) el.style.display = (i === currentSlide) ? '' : 'none';
+      }
+      document.getElementById('slide-label').textContent = 'Slide ' + currentSlide + ' / ' + totalSlides;
+      document.getElementById('progress-fill').style.width = ((currentSlide / totalSlides) * 100) + '%';
+      document.getElementById('video-time').textContent = slideTimestamps[currentSlide - 1] + ' / 18:00';
+
+      const btnPrev = document.getElementById('btn-prev');
+      const btnNext = document.getElementById('btn-next');
+      const overlayPrev = document.getElementById('slide-prev-overlay');
+      const overlayNext = document.getElementById('slide-next-overlay');
+
+      if (btnPrev) btnPrev.disabled = (currentSlide === 1);
+      if (overlayPrev) overlayPrev.disabled = (currentSlide === 1);
+
+      if (btnNext) btnNext.disabled = (currentSlide === totalSlides);
+      if (overlayNext) overlayNext.disabled = (currentSlide === totalSlides);
+
+      if (currentSlide === totalSlides) {
+        const endBtn = document.getElementById('btn-end-lesson');
+        if (endBtn && endBtn.disabled) {
+          endBtn.disabled = false;
+          endBtn.style.animation = 'fadeInUp 0.3s ease';
         }
       }
     }
 
-    // --- Bookmark ---
-    function addBookmark() {
-      const timestamp = slideTimestamps[currentSlide - 1];
-      const name = slideNames[currentSlide - 1];
-      const preview = slidePreviews[currentSlide - 1];
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlideView();
+      }
+    }
 
-      bookmarks.push({ timestamp, name, preview, slide: currentSlide });
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlideView();
+      }
+    }
+
+    // --- Toast helper ---
+    function showToast(msg) {
+      let toast = document.getElementById('proto-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'proto-toast';
+        toast.className = 'proto-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toast._timeout);
+      toast._timeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    // --- Text Selection Bookmark Popup ---
+    let currentSelectedRange = null;
+    const slideArea = document.getElementById('slide-area');
+    const selectionMenu = document.getElementById('text-selection-menu');
+
+    if (slideArea && selectionMenu) {
+      slideArea.addEventListener('mouseup', function () {
+        setTimeout(() => {
+          const sel = window.getSelection();
+          const text = sel ? sel.toString().trim() : '';
+
+          if (text.length >= 2 && sel.rangeCount > 0) {
+            currentSelectedRange = sel.getRangeAt(0);
+            const rect = currentSelectedRange.getBoundingClientRect();
+            const areaRect = slideArea.getBoundingClientRect();
+
+            const top = rect.top - areaRect.top - 48;
+            const left = (rect.left - areaRect.left) + (rect.width / 2);
+
+            selectionMenu.style.top = Math.max(12, top) + 'px';
+            selectionMenu.style.left = Math.max(90, Math.min(areaRect.width - 110, left)) + 'px';
+            selectionMenu.classList.add('show');
+            selectionMenu.dataset.selectedText = text;
+          } else {
+            selectionMenu.classList.remove('show');
+            currentSelectedRange = null;
+          }
+        }, 30);
+      });
+
+      document.addEventListener('mousedown', function (e) {
+        if (selectionMenu && !selectionMenu.contains(e.target) && slideArea && !slideArea.contains(e.target)) {
+          selectionMenu.classList.remove('show');
+          currentSelectedRange = null;
+        }
+      });
+    }
+
+    function saveTextBookmark() {
+      const text = selectionMenu ? selectionMenu.dataset.selectedText : '';
+      if (!text) return;
+
+      // Visually highlight the selected text on the slide
+      if (currentSelectedRange) {
+        try {
+          const mark = document.createElement('mark');
+          mark.className = 'slide-highlight-mark';
+          mark.style.background = 'rgba(234, 88, 12, 0.35)';
+          mark.style.borderBottom = '2px solid #EA580C';
+          mark.appendChild(currentSelectedRange.extractContents());
+          currentSelectedRange.insertNode(mark);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      const timestamp = slideTimestamps[currentSlide - 1];
+      const snippet = text.length > 45 ? text.substring(0, 45) + '...' : text;
+      const bmId = Date.now() + Math.random().toString(36).substr(2, 4);
+
+      bookmarks.push({
+        id: bmId,
+        timestamp,
+        name: `Trích dẫn Slide ${currentSlide}`,
+        preview: `"${text}"`,
+        slide: currentSlide
+      });
+
+      showToast(`📌 Đã ghim trích dẫn: "${snippet}"`);
 
       // Update count
       document.getElementById('bm-count').textContent = bookmarks.length;
@@ -204,48 +325,122 @@
 
       // Remove empty state
       const empty = document.getElementById('bm-empty');
-      if (empty) empty.remove();
+      if (empty) empty.style.display = 'none';
 
       // Add to list
       const list = document.getElementById('bookmark-list');
       const li = document.createElement('li');
       li.className = 'bookmark-item animate-in';
-      li.id = 'bm-item-' + bookmarks.length;
+      li.id = 'bm-item-' + bmId;
+      li.innerHTML = `
+        <span class="bookmark-time">${timestamp}</span>
+        <div class="bookmark-content">
+          <div class="bookmark-slide-name">Slide ${currentSlide} · Trích dẫn</div>
+          <div class="bookmark-preview">"${text}"</div>
+        </div>
+        <button class="bookmark-delete" onclick="deleteBookmark('${bmId}')" title="Xoá bookmark">✕</button>
+      `;
+      list.prepend(li);
+
+      // Clear selection & hide menu
+      window.getSelection().removeAllRanges();
+      if (selectionMenu) selectionMenu.classList.remove('show');
+      currentSelectedRange = null;
+    }
+
+    // --- Bookmark ---
+    function addBookmark() {
+      const existing = bookmarks.find(b => b.slide === currentSlide);
+      const btn = document.getElementById('btn-bookmark');
+
+      if (existing) {
+        showToast('✓ Slide ' + currentSlide + ' đã có trong danh sách Bookmark!');
+        if (btn) {
+          btn.style.background = '#FFEDD5';
+          btn.innerHTML = '⚠️ Slide ' + currentSlide + ' đã được ghim rồi!';
+          setTimeout(() => {
+            btn.style.background = '';
+            btn.innerHTML = '📌 Bookmark mốc này <span class="shortcut-hint">Phím B</span>';
+          }, 1400);
+        }
+        return;
+      }
+
+      const timestamp = slideTimestamps[currentSlide - 1];
+      const name = slideNames[currentSlide - 1];
+      const preview = slidePreviews[currentSlide - 1];
+      const bmId = Date.now() + Math.random().toString(36).substr(2, 4);
+
+      bookmarks.push({ id: bmId, timestamp, name, preview, slide: currentSlide });
+
+      showToast('📌 Đã ghim Bookmark cho Slide ' + currentSlide);
+
+      // Update count
+      document.getElementById('bm-count').textContent = bookmarks.length;
+      document.getElementById('btn-end-lesson').disabled = false;
+
+      // Remove empty state
+      const empty = document.getElementById('bm-empty');
+      if (empty) empty.style.display = 'none';
+
+      // Add to list
+      const list = document.getElementById('bookmark-list');
+      const li = document.createElement('li');
+      li.className = 'bookmark-item animate-in';
+      li.id = 'bm-item-' + bmId;
       li.innerHTML = `
         <span class="bookmark-time">${timestamp}</span>
         <div class="bookmark-content">
           <div class="bookmark-slide-name">Slide ${currentSlide}: ${name}</div>
           <div class="bookmark-preview">${preview}</div>
         </div>
-        <button class="bookmark-delete" onclick="deleteBookmark(${bookmarks.length})" title="Xoá bookmark">✕</button>
+        <button class="bookmark-delete" onclick="deleteBookmark('${bmId}')" title="Xoá bookmark">✕</button>
       `;
-      list.appendChild(li);
+      list.prepend(li);
 
       // Button feedback
-      const btn = document.getElementById('btn-bookmark');
-      btn.style.background = '#FFEDD5';
-      btn.textContent = '✓ Đã ghim — Slide ' + currentSlide;
-      setTimeout(() => {
-        btn.style.background = '';
-        btn.innerHTML = '📌 Bookmark mốc này <span class="shortcut-hint">Phím B</span>';
-      }, 1200);
+      if (btn) {
+        btn.style.background = '#FFEDD5';
+        btn.textContent = '✓ Đã ghim — Slide ' + currentSlide;
+        setTimeout(() => {
+          btn.style.background = '';
+          btn.innerHTML = '📌 Bookmark mốc này <span class="shortcut-hint">Phím B</span>';
+        }, 1200);
+      }
     }
 
-    function deleteBookmark(n) {
-      const item = document.getElementById('bm-item-' + n);
+    function deleteBookmark(id) {
+      const idx = bookmarks.findIndex(b => b.id === id);
+      if (idx !== -1) {
+        bookmarks.splice(idx, 1);
+      }
+      document.getElementById('bm-count').textContent = bookmarks.length;
+      const item = document.getElementById('bm-item-' + id);
       if (item) {
         item.style.opacity = '0';
         item.style.transform = 'translateX(20px)';
-        setTimeout(() => item.remove(), 300);
+        setTimeout(() => {
+          item.remove();
+          if (bookmarks.length === 0) {
+            const list = document.getElementById('bookmark-list');
+            if (list) {
+              list.innerHTML = '<li class="bookmark-empty" id="bm-empty">Chưa có bookmark nào. Hãy bấm nút 📌 hoặc phím <strong>B</strong> khi gặp nội dung quan trọng.</li>';
+            }
+          }
+        }, 300);
       }
     }
 
     // --- Keyboard Shortcut ---
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'b' || e.key === 'B') {
-        const lectureState = document.getElementById('state-lecture');
-        if (lectureState.classList.contains('active')) {
+      const lectureState = document.getElementById('state-lecture');
+      if (lectureState && lectureState.classList.contains('active')) {
+        if (e.key === 'b' || e.key === 'B') {
           addBookmark();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
         }
       }
     });

@@ -31,84 +31,115 @@
             </div>
           </div>
 
-          <!-- Video Player (same content as Option A) -->
-          <div class="video-player">
-            <div class="video-slide-area" id="slide-area">
-              <span class="slide-label" id="slide-label">Slide 1 / 4</span>
-              <div id="slide-1" class="slide-view">
-                <h2 class="slide-title">Bài 3: Phân tích Cấu trúc Chi phí Doanh nghiệp</h2>
-                <div class="slide-content">
-                  <p>📚 Nội dung bài học hôm nay:</p>
-                  <p style="margin-top:12px">• Phân biệt <strong>chi phí cố định</strong> và <strong>chi phí biến
-                      đổi</strong></p>
-                  <p>• Tính <strong>điểm hoà vốn (Break-even Point)</strong></p>
-                  <p>• Ứng dụng <strong>biên lợi nhuận gộp</strong> trong quyết định kinh doanh</p>
-                </div>
-              </div>
-              <div id="slide-2" class="slide-view" style="display:none">
-                <h2 class="slide-title">Chi phí Cố định vs Chi phí Biến đổi</h2>
-                <div class="slide-content">
-                  <p><strong>Chi phí cố định (Fixed Costs):</strong> Không thay đổi theo sản lượng</p>
-                  <p style="margin-top:8px">→ Tiền thuê mặt bằng, lương nhân viên cố định, khấu hao thiết bị</p>
-                  <p style="margin-top:16px"><strong>Chi phí biến đổi (Variable Costs):</strong> Tăng/giảm theo sản
-                    lượng</p>
-                  <p style="margin-top:8px">→ Nguyên vật liệu, hoa hồng bán hàng, chi phí vận chuyển</p>
-                  <p style="margin-top:16px; color: #60A5FA;">⚠️ Sai lầm phổ biến: Nhầm lẫn giữa chi phí "nhỏ" với chi
-                    phí "biến đổi"</p>
-                </div>
-              </div>
-              <div id="slide-3" class="slide-view" style="display:none">
-                <h2 class="slide-title">Điểm Hoà vốn (Break-even Point)</h2>
-                <div class="slide-content">
-                  <p>Điểm tại đó tổng doanh thu bằng tổng chi phí → Lợi nhuận = 0</p>
-                  <div class="formula">
-                    BEP = Chi phí cố định ÷ (Giá bán − Chi phí biến đổi/đơn vị)
+          <div class="lecture-grid">
+            <!-- Left Column: Video Player -->
+            <div class="lecture-main">
+              <div class="video-player">
+                <div class="video-slide-area" id="slide-area">
+                  <div class="text-selection-menu" id="text-selection-menu">
+                    <span style="font-size:11px; color:rgba(255,255,255,0.7); margin-right:4px;">Ghi chú:</span>
+                    <button class="btn-sel-action" onclick="saveTextSelection('important')">⭐ Quan trọng</button>
+                    <button class="btn-sel-action btn-sel-unclear" onclick="saveTextSelection('unclear')">❓ Chưa hiểu</button>
                   </div>
-                  <p style="margin-top:12px"><strong>Ý nghĩa:</strong> Doanh nghiệp cần bán ít nhất bao nhiêu đơn vị để
-                    không lỗ</p>
-                  <p style="margin-top:8px; color: #60A5FA;">→ BEP thấp = rủi ro thấp hơn khi mới khởi nghiệp</p>
-                </div>
-              </div>
-              <div id="slide-4" class="slide-view" style="display:none">
-                <h2 class="slide-title">Case Study: Quán Cafe Startup</h2>
-                <div class="slide-content">
-                  <p><strong>Dữ kiện:</strong></p>
-                  <p>• Thuê mặt bằng + lương: <strong>30 triệu/tháng</strong> (cố định)</p>
-                  <p>• Chi phí 1 ly cafe: <strong>15.000đ</strong> (biến đổi)</p>
-                  <p>• Giá bán 1 ly: <strong>45.000đ</strong></p>
-                  <div class="formula">
-                    BEP = 30.000.000 ÷ (45.000 − 15.000) = 1.000 ly/tháng
+                  <button class="slide-overlay-btn slide-overlay-prev" id="slide-prev-overlay" onclick="prevSlide()" title="Slide trước (Phím ←)" disabled aria-label="Slide trước">‹</button>
+                  <button class="slide-overlay-btn slide-overlay-next" id="slide-next-overlay" onclick="nextSlide()" title="Tiến slide (Phím →)" aria-label="Slide tiếp">›</button>
+                  <span class="slide-label" id="slide-label">Slide 1 / 4</span>
+                  <div id="slide-1" class="slide-view">
+                    <h2 class="slide-title">Bài 3: Phân tích Cấu trúc Chi phí Doanh nghiệp</h2>
+                    <div class="slide-content">
+                      <p>📚 Nội dung bài học hôm nay:</p>
+                      <p style="margin-top:12px">• Phân biệt <strong>chi phí cố định</strong> và <strong>chi phí biến
+                          đổi</strong></p>
+                      <p>• Tính <strong>điểm hoà vốn (Break-even Point)</strong></p>
+                      <p>• Ứng dụng <strong>biên lợi nhuận gộp</strong> trong quyết định kinh doanh</p>
+                    </div>
                   </div>
-                  <p style="margin-top:12px; color: #60A5FA;">→ Cần bán ít nhất 1.000 ly/tháng (~33 ly/ngày) mới hoà vốn
-                  </p>
+                  <div id="slide-2" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Chi phí Cố định vs Chi phí Biến đổi</h2>
+                    <div class="slide-content">
+                      <p><strong>Chi phí cố định (Fixed Costs):</strong> Không thay đổi theo sản lượng</p>
+                      <p style="margin-top:8px">→ Tiền thuê mặt bằng, lương nhân viên cố định, khấu hao thiết bị</p>
+                      <p style="margin-top:16px"><strong>Chi phí biến đổi (Variable Costs):</strong> Tăng/giảm theo sản
+                        lượng</p>
+                      <p style="margin-top:8px">→ Nguyên vật liệu, hoa hồng bán hàng, chi phí vận chuyển</p>
+                      <p style="margin-top:16px; color: #60A5FA;">⚠️ Sai lầm phổ biến: Nhầm lẫn giữa chi phí "nhỏ" với chi
+                        phí "biến đổi"</p>
+                    </div>
+                  </div>
+                  <div id="slide-3" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Điểm Hoà vốn (Break-even Point)</h2>
+                    <div class="slide-content">
+                      <p>Điểm tại đó tổng doanh thu bằng tổng chi phí → Lợi nhuận = 0</p>
+                      <div class="formula">
+                        BEP = Chi phí cố định ÷ (Giá bán − Chi phí biến đổi/đơn vị)
+                      </div>
+                      <p style="margin-top:12px"><strong>Ý nghĩa:</strong> Doanh nghiệp cần bán ít nhất bao nhiêu đơn vị để
+                        không lỗ</p>
+                      <p style="margin-top:8px; color: #60A5FA;">→ BEP thấp = rủi ro thấp hơn khi mới khởi nghiệp</p>
+                    </div>
+                  </div>
+                  <div id="slide-4" class="slide-view" style="display:none">
+                    <h2 class="slide-title">Case Study: Quán Cafe Startup</h2>
+                    <div class="slide-content">
+                      <p><strong>Dữ kiện:</strong></p>
+                      <p>• Thuê mặt bằng + lương: <strong>30 triệu/tháng</strong> (cố định)</p>
+                      <p>• Chi phí 1 ly cafe: <strong>15.000đ</strong> (biến đổi)</p>
+                      <p>• Giá bán 1 ly: <strong>45.000đ</strong></p>
+                      <div class="formula">
+                        BEP = 30.000.000 ÷ (45.000 − 15.000) = 1.000 ly/tháng
+                      </div>
+                      <p style="margin-top:12px; color: #60A5FA;">→ Cần bán ít nhất 1.000 ly/tháng (~33 ly/ngày) mới hoà vốn
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="video-controls">
+                  <div class="video-nav-group">
+                    <button class="btn-ctrl btn-ctrl-icon" id="btn-prev" onclick="prevSlide()" title="Slide trước (Phím ←)" disabled aria-label="Slide trước">◀</button>
+                    <button class="btn-ctrl btn-ctrl-primary btn-ctrl-icon" id="btn-next" onclick="nextSlide()" title="Slide tiếp theo (Phím →)" aria-label="Slide tiếp">▶</button>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                  </div>
+                  <span class="video-time" id="video-time">0:00 / 18:00</span>
                 </div>
               </div>
             </div>
-            <div class="video-controls">
-              <button class="btn-play" id="btn-play" onclick="nextSlide()">▶</button>
-              <div class="progress-bar">
-                <div class="progress-fill" id="progress-fill"></div>
+
+            <!-- Right Column: Interactive Sidebar -->
+            <div class="lecture-sidebar">
+              <div class="sidebar-panel">
+                <div class="sidebar-panel-header">
+                  <span class="sidebar-panel-title">⭐ Đánh dấu bài học</span>
+                  <span class="highlight-count" id="hl-count">0</span>
+                </div>
+                <p class="sidebar-panel-desc">Đánh dấu khi nghe giảng. Khi kết thúc bài, AI sẽ đề xuất 3 ý chính dựa trên nội dung bạn vừa xem để bạn duyệt.</p>
+
+                <div class="highlight-actions" style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+                  <button class="btn-highlight" id="btn-hl-important" onclick="addHighlight('important')" style="width:100%; justify-content:center; padding:10px 14px;">
+                    ⭐ Quan trọng
+                  </button>
+                  <button class="btn-highlight" id="btn-hl-unclear" onclick="addHighlight('unclear')" style="width:100%; justify-content:center; padding:10px 14px;">
+                    ❓ Chưa hiểu
+                  </button>
+                </div>
+
+                <!-- Live Highlight Feed in sidebar -->
+                <div class="live-activity-box" id="live-hl-box">
+                  <div id="live-hl-empty" style="color:var(--ink-muted); text-align:center; font-style:italic; font-size:12px; padding:8px 0;">
+                    Chưa có đánh dấu nào.<br>Bấm nút phía trên khi gặp ý quan trọng.
+                  </div>
+                  <div id="live-hl-list" style="display:flex; flex-direction:column; gap:6px;"></div>
+                </div>
+
+                <!-- End Lesson Button -->
+                <button class="btn btn-primary btn-lg btn-block" onclick="endLesson()" id="btn-end-lesson" disabled>
+                  Kết thúc bài học → Xem gợi ý AI
+                </button>
+                <p class="text-center text-muted text-sm mt-8" style="font-size:12px;">Hãy xem qua các slide trước khi kết thúc bài</p>
               </div>
-              <span class="video-time" id="video-time">0:00 / 18:00</span>
             </div>
           </div>
-
-          <!-- Highlight Toolbar -->
-          <div class="highlight-toolbar">
-            <div>
-              <span class="highlight-toolbar-label">Đánh dấu nhanh khi nghe giảng:</span>
-            </div>
-            <div class="highlight-actions">
-              <button class="btn-highlight" onclick="addHighlight()">⭐ Quan trọng</button>
-              <button class="btn-highlight" onclick="addHighlight()">❓ Chưa hiểu</button>
-              <span class="highlight-count" id="hl-count">0</span>
-            </div>
-          </div>
-
-          <button class="btn btn-primary btn-lg btn-block" onclick="endLesson()" id="btn-end-lesson" disabled>
-            Kết thúc bài học → Xem gợi ý từ AI
-          </button>
-          <p class="text-center text-muted text-sm mt-16">Hãy xem qua các slide trước khi kết thúc bài</p>
         </div>
 
         <!-- ========== STATE 2: AI Loading ========== -->
@@ -270,26 +301,235 @@
     let currentSlide = 1;
     const totalSlides = 4;
     let highlightCount = 0;
+    const highlights = [];
+    const slideTimestamps = ['0:00', '4:15', '9:00', '13:00'];
 
-    function nextSlide() {
-      if (currentSlide < totalSlides) {
-        document.getElementById('slide-' + currentSlide).style.display = 'none';
-        currentSlide++;
-        document.getElementById('slide-' + currentSlide).style.display = '';
-        document.getElementById('slide-label').textContent = 'Slide ' + currentSlide + ' / ' + totalSlides;
-        document.getElementById('progress-fill').style.width = ((currentSlide / totalSlides) * 100) + '%';
-        const times = ['4:15', '9:00', '13:00', '18:00'];
-        document.getElementById('video-time').textContent = times[currentSlide - 1] + ' / 18:00';
-        if (currentSlide === totalSlides) {
-          document.getElementById('btn-play').textContent = '⏹';
-          document.getElementById('btn-end-lesson').disabled = false;
+    // --- Toast helper ---
+    function showToast(msg) {
+      let toast = document.getElementById('proto-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'proto-toast';
+        toast.className = 'proto-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toast._timeout);
+      toast._timeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2200);
+    }
+
+    function updateSlideView() {
+      for (let i = 1; i <= totalSlides; i++) {
+        const el = document.getElementById('slide-' + i);
+        if (el) el.style.display = (i === currentSlide) ? '' : 'none';
+      }
+      document.getElementById('slide-label').textContent = 'Slide ' + currentSlide + ' / ' + totalSlides;
+      document.getElementById('progress-fill').style.width = ((currentSlide / totalSlides) * 100) + '%';
+      document.getElementById('video-time').textContent = slideTimestamps[currentSlide - 1] + ' / 18:00';
+
+      const btnPrev = document.getElementById('btn-prev');
+      const btnNext = document.getElementById('btn-next');
+      const overlayPrev = document.getElementById('slide-prev-overlay');
+      const overlayNext = document.getElementById('slide-next-overlay');
+
+      if (btnPrev) btnPrev.disabled = (currentSlide === 1);
+      if (overlayPrev) overlayPrev.disabled = (currentSlide === 1);
+
+      if (btnNext) btnNext.disabled = (currentSlide === totalSlides);
+      if (overlayNext) overlayNext.disabled = (currentSlide === totalSlides);
+
+      if (currentSlide === totalSlides) {
+        const endBtn = document.getElementById('btn-end-lesson');
+        if (endBtn && endBtn.disabled) {
+          endBtn.disabled = false;
+          endBtn.style.animation = 'fadeInUp 0.3s ease';
         }
       }
     }
 
-    function addHighlight() {
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        currentSlide++;
+        updateSlideView();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        currentSlide--;
+        updateSlideView();
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function (e) {
+      const lectureState = document.getElementById('state-lecture');
+      if (lectureState && lectureState.classList.contains('active')) {
+        if (e.key === 'ArrowRight') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+          prevSlide();
+        }
+      }
+    });
+
+    // --- Text Selection Note Popup ---
+    let currentSelectedRange = null;
+    const slideArea = document.getElementById('slide-area');
+    const selectionMenu = document.getElementById('text-selection-menu');
+
+    if (slideArea && selectionMenu) {
+      slideArea.addEventListener('mouseup', function () {
+        setTimeout(() => {
+          const sel = window.getSelection();
+          const text = sel ? sel.toString().trim() : '';
+
+          if (text.length >= 2 && sel.rangeCount > 0) {
+            currentSelectedRange = sel.getRangeAt(0);
+            const rect = currentSelectedRange.getBoundingClientRect();
+            const areaRect = slideArea.getBoundingClientRect();
+
+            const top = rect.top - areaRect.top - 48;
+            const left = (rect.left - areaRect.left) + (rect.width / 2);
+
+            selectionMenu.style.top = Math.max(12, top) + 'px';
+            selectionMenu.style.left = Math.max(100, Math.min(areaRect.width - 120, left)) + 'px';
+            selectionMenu.classList.add('show');
+            selectionMenu.dataset.selectedText = text;
+          } else {
+            selectionMenu.classList.remove('show');
+            currentSelectedRange = null;
+          }
+        }, 30);
+      });
+
+      document.addEventListener('mousedown', function (e) {
+        if (selectionMenu && !selectionMenu.contains(e.target) && slideArea && !slideArea.contains(e.target)) {
+          selectionMenu.classList.remove('show');
+          currentSelectedRange = null;
+        }
+      });
+    }
+
+    function saveTextSelection(type) {
+      const text = selectionMenu ? selectionMenu.dataset.selectedText : '';
+      if (!text) return;
+
+      const label = type === 'important' ? '⭐ Quan trọng' : '❓ Chưa hiểu';
+
+      // Visually highlight the selected text on the slide
+      if (currentSelectedRange) {
+        try {
+          const mark = document.createElement('mark');
+          mark.className = 'slide-highlight-mark';
+          mark.appendChild(currentSelectedRange.extractContents());
+          currentSelectedRange.insertNode(mark);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
       highlightCount++;
       document.getElementById('hl-count').textContent = highlightCount;
+
+      const snippet = text.length > 45 ? text.substring(0, 45) + '...' : text;
+      const item = {
+        type: label,
+        slide: currentSlide,
+        time: slideTimestamps[currentSlide - 1]
+      };
+      highlights.push(item);
+
+      showToast(`✓ Đã lưu trích dẫn ${label}: "${snippet}"`);
+
+      // Update live sidebar list
+      const emptyEl = document.getElementById('live-hl-empty');
+      if (emptyEl) emptyEl.style.display = 'none';
+      const listEl = document.getElementById('live-hl-list');
+      if (listEl) {
+        const div = document.createElement('div');
+        div.style.padding = '8px 10px';
+        div.style.background = 'var(--surface)';
+        div.style.borderRadius = '6px';
+        div.style.border = '1px solid var(--border)';
+        div.style.display = 'flex';
+        div.style.flexDirection = 'column';
+        div.style.gap = '4px';
+        div.style.fontSize = '12px';
+        div.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span><strong>Slide ${currentSlide}</strong>: ${label}</span>
+            <span class="source-tag" style="margin:0;">📍 ${item.time}</span>
+          </div>
+          <div style="color:var(--ink-secondary); font-style:italic; border-left:2px solid #7C3AED; padding-left:6px; margin-top:2px;">
+            "${snippet}"
+          </div>
+        `;
+        listEl.prepend(div);
+      }
+
+      // Clear selection & hide menu
+      window.getSelection().removeAllRanges();
+      if (selectionMenu) selectionMenu.classList.remove('show');
+      currentSelectedRange = null;
+
+      if (currentSlide === totalSlides) {
+        document.getElementById('btn-end-lesson').disabled = false;
+      }
+    }
+
+    function addHighlight(type = 'important') {
+      const label = type === 'important' ? '⭐ Quan trọng' : '❓ Chưa hiểu';
+      const existing = highlights.find(h => h.slide === currentSlide && h.type === label);
+      const btn = type === 'important' ? document.getElementById('btn-hl-important') : document.getElementById('btn-hl-unclear');
+
+      if (existing) {
+        showToast('✓ Slide ' + currentSlide + ' đã được đánh dấu ' + label + ' trước đó!');
+        if (btn) {
+          btn.classList.add('already-marked');
+          setTimeout(() => btn.classList.remove('already-marked'), 800);
+        }
+        return;
+      }
+
+      highlightCount++;
+      document.getElementById('hl-count').textContent = highlightCount;
+
+      if (btn) {
+        btn.classList.add('active');
+        setTimeout(() => btn.classList.remove('active'), 600);
+      }
+
+      const item = {
+        type: label,
+        slide: currentSlide,
+        time: slideTimestamps[currentSlide - 1]
+      };
+      highlights.push(item);
+
+      showToast('Đã đánh dấu ' + label + ' cho Slide ' + currentSlide);
+
+      // Update live sidebar list
+      const emptyEl = document.getElementById('live-hl-empty');
+      if (emptyEl) emptyEl.style.display = 'none';
+      const listEl = document.getElementById('live-hl-list');
+      if (listEl) {
+        const div = document.createElement('div');
+        div.style.padding = '6px 10px';
+        div.style.background = 'var(--surface)';
+        div.style.borderRadius = '6px';
+        div.style.border = '1px solid var(--border)';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'space-between';
+        div.style.alignItems = 'center';
+        div.style.fontSize = '12px';
+        div.innerHTML = `<span><strong>Slide ${currentSlide}</strong>: ${label}</span><span class="source-tag" style="margin:0;">📍 ${item.time}</span>`;
+        listEl.prepend(div);
+      }
+
       if (currentSlide === totalSlides) {
         document.getElementById('btn-end-lesson').disabled = false;
       }
